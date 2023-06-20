@@ -68,7 +68,7 @@ public class MovieRepository {
 // data call when searching Movie
     public  MutableLiveData<List<Movie>> getMutableLiveDataSearch(String movieName , int page){
         MovieDataService movieSearchService = RetrofiteInstance.getService();
-        Call<Result> call = movieSearchService.getSearchedMovie(application.getApplicationContext().getString(R.string.api_key),movieName,page);
+        Call<Result> call = movieSearchService.getSearchedMovie(API_KEY,movieName,page);
 
         call.enqueue(new Callback<Result>() {
             @Override
